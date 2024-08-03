@@ -14,7 +14,7 @@ const Dashboard = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.get('https://backend-runfood.vercel.app/product/');
+        const response = await axios.get('https://backend-runfood.vercel.app/revenue/all-products');
         setProducts(response.data.data);
       } catch (error) {
         console.error('Error fetching products:', error);
