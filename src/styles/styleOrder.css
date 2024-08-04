@@ -1,0 +1,47 @@
+.order-card {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.order-card ul {
+    padding-left: 20px;
+}
+
+.order-card ul li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
+
+.order-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.export-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.card-details {
+    margin-bottom: 15px;
+}
+
+
+button.export-btn {
+    padding: 6px 12px;
+    background-color: #009879;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
