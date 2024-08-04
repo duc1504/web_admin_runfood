@@ -1,17 +1,14 @@
-
 import './App.css';
-import {Route, Routes,BrowserRouter as Router, Navigate, Outlet} from "react-router-dom";
+import {Route, Routes, BrowserRouter as Router, Navigate, Outlet} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from "./pages/Login";
 import Products from "./pages/Products/Products";
 import InsertProduct from './pages/Products/AddProductModal';
 import Home from "./pages/Home/Home";
 import UpImage from './pages/UpImage';
-
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
-  // console.log('App render');
-  // lấy dữ liệu tu localStorage
   const user = JSON.parse(localStorage.getItem('user'));
 
   const PublicRoute = () => {
@@ -27,12 +24,14 @@ function App() {
     } 
     return <Outlet/>
   }
+
   return (
     <div className="App">
       <Router>
+        <Analytics />
         <Routes>
           <Route element={<PublicRoute/>}>
-            <Route path="/login" element={<Login/>}  />
+            <Route path="/login" element={<Login/>} />
           </Route>
           <Route element={<PrivateRoute/>}>
             <Route path="/" element={<Home/>} />
@@ -40,7 +39,6 @@ function App() {
             <Route path="/insertproduct" element={<InsertProduct/>} />
             <Route path="/upimage" element={<UpImage/>} />
           </Route>
-       
         </Routes>
       </Router>
     </div>
